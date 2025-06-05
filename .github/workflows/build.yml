@@ -1,0 +1,28 @@
+name: Build EXE
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install pyinstaller pywin32
+
+      - name: Empaquetar con PyInstaller
+        run: pyinstaller --onefile --windowed --icon printer_app/app_icon.ico --add-data "printer_app/resources;printer_app/resources" printer_app/main.py
+
+      - name: Subir ejecutable como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: MassPrint
+          path: dist/main.exe
