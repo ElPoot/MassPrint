@@ -19,7 +19,7 @@ jobs:
         run: pip install pyinstaller pywin32
 
       - name: Empaquetar con PyInstaller
-        run: pyinstaller --onefile --windowed --icon printer_app/app_icon.ico --add-data "printer_app/resources;printer_app/resources" printer_app/main.py
+        run: pyinstaller --name MassPrint --onefile --windowed --icon printer_app/app_icon.ico --add-data "printer_app/resources;printer_app/resources" printer_app/main.py
 
       - name: Subir ejecutable como artefacto
         uses: actions/upload-artifact@v4
