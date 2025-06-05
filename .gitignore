@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+
+# Entornos virtuales / IDE
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+
+# PyInstaller artefactos
+build/
+dist/
+*.spec
+*.exe        # ejecutables generados
+*.dll
+*.zip        # backups o releases empaquetados
+
+# Otros
+.DS_Store
+Thumbs.db
