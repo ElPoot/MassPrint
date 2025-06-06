@@ -22,3 +22,10 @@ dist/
 # Otros
 .DS_Store
 Thumbs.db
+
+
+*.spec
+
+# estado, logs
+estado_impresion.db
+logs/
